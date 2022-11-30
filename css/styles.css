@@ -14,6 +14,8 @@ header{
     top: 0;
     background-color: white;
 }
+/* ----------------------------------------------------- */
+/* SECTION FREE SHIPPING */
 .free-shiping-container{
     display: flex;
     justify-content: space-between;
@@ -95,6 +97,7 @@ header{
     align-items: center;
     flex-basis: 20%;
 }
+/* ----------------------------------------------------- */
 /* NAV STYLES */
 nav{
     display: flex;
@@ -117,6 +120,7 @@ nav div a{
 nav div a:hover{
     color: #f18491;
 }
+/* ----------------------------------------------------- */
 /* SUBMENU STYLES */
 .menu{
     position: relative;
@@ -152,6 +156,7 @@ nav div a:hover{
     background-size: cover;
     border-radius: 10px;
 }
+/* ----------------------------------------------------- */
 /* MAIN STYLES */
 main{
     width: 70%;
@@ -194,21 +199,24 @@ main{
     background-color: #b2606a;
     cursor: pointer;
 }
-/* GRID STYLES */
+/* ----------------------------------------------------- */
+/* MAIN GRID STYLES */
 .new-products{
     margin: 2rem 0 1rem 0;
 }
 .new-products-grid{
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 1rem;
-    row-gap: 4rem;
+    gap: 2rem;
 }
 .card{
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 1px solid rgba(128, 128, 128, 0.138);
+    border-radius: 5px;
+    padding: .5rem;
 }
 /* OFERTA EN LA PRIMERA CARD*/
 #card1{
@@ -239,10 +247,24 @@ main{
 .product-stars{
     padding: .5rem 0;
 }
-.product-price-button{
+.product-buy{
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+.price{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.price div{
+    padding-right: .5rem;
+    font-weight: 700;
+}
+.price div:last-child{
+    text-decoration: line-through;
+    font-weight: normal;
 }
 .product-button{
     width: 20%;
@@ -260,20 +282,7 @@ main{
     cursor: pointer;
     background-color: #d27c42;
 }
-.price{
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-}
-.price div{
-    padding-right: .5rem;
-    font-weight: 700;
-}
-.price div:last-child{
-    text-decoration: line-through;
-    font-weight: normal;
-}
+/* ----------------------------------------------------- */
 /* FOOTER STYLES */
 footer{
     margin-top: 4rem;
@@ -302,6 +311,11 @@ footer{
     text-decoration: none;
     color: rgb(163, 163, 163);
     padding: .5rem 0;
+    border-bottom: 1px solid transparent;
+}
+.footer-category a:hover{
+    color:rgb(202, 202, 202) ;
+    border-bottom: 1px solid rgb(202, 202, 202);
 }
 .payment-container{
     width: 80%;
@@ -316,6 +330,7 @@ footer{
     padding: .5rem 0;
     text-align: center;
 }
+/* ----------------------------------------------------- */
 /* MEDIAQUERIES MOBILE */
 @media(max-width:480px){
     /* HEADER */
