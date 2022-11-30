@@ -1,15 +1,24 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 /* font-family: 'Lato', sans-serif; */
+/* font-family: 'Monoton', cursive; */
 
 *{margin: 0; padding: 0; box-sizing: border-box; font-family: 'Lato', sans-serif;}
 
 /* HEADER STYLES */
+header{
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background-color: white;
+}
 .free-shiping-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: .5rem 1rem;
 }
 .social-media{
     display: flex;
@@ -31,6 +40,14 @@
 .language{
     width: 20%;
     text-align: center;
+}
+.language select{
+    padding: .2rem;
+    border: none;
+    border-radius: 5px;
+}
+.language select:hover{
+    cursor: pointer;
 }
 /* ----------------------------------- */
 .header-content{
@@ -72,7 +89,10 @@
         top: .5rem;
         right: 3rem;
 }
-.language{
+.header-icons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     flex-basis: 20%;
 }
 /* NAV STYLES */
@@ -80,14 +100,22 @@ nav{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
-    padding: 1.5rem 0;
+    padding: .5rem 0;
 }
 nav div a{
     text-decoration: none;
     font: 700 16px 'Lato';
     color: #000;
+    /* Para mantener el submenu sin que el ratón tenga que estar justo encima de MEN'S */
+    display:flex;
+    align-items: center;
+    min-height: 2rem;
+    transition: .2s;
+}
+nav div a:hover{
+    color: #f18491;
 }
 /* SUBMENU STYLES */
 .menu{
@@ -98,34 +126,36 @@ nav div a{
     display: none;
     position: absolute;
     z-index: 5;
+    top: 2rem;
     background-color: white;
     padding: 1rem;
     border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.313);
 }
 .menu:hover .submenu{
-    display: block;
-}
-.submenu-flex{
-    width: 50%;
     display: flex;
 }
 .submenu-a{
-    flex-basis: 50%;
+    flex-basis: 30%;
 }
 .submenu-a a{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding: .5rem 0;
 }
 .submenu-img{
-    flex-basis: 50%;
-
-}
-.submenu-img img{
+    flex-basis: 70%;
+    height: 11rem;
+    width: 25rem;
+    background-image: url(../img/banners/mens-banner.jpg);
+    background-size: cover;
     border-radius: 10px;
 }
 /* MAIN STYLES */
 main{
     width: 70%;
-    margin: 0 auto;
+    margin: 11.3rem auto 0 auto;
 }
 .banner{
     width: 100%;
@@ -144,7 +174,7 @@ main{
     color: #f18491;
 }
 .banner-text h3{
-    font: 900 32px 'Lato';
+    font: normal 24px 'Monoton';
     padding: 1rem 0;
 }
 .banner-text h4{
@@ -159,6 +189,10 @@ main{
     border: none;
     border-radius: 5px;
     margin: 1rem 0;
+}
+.banner-text button:hover{
+    background-color: #b2606a;
+    cursor: pointer;
 }
 /* GRID STYLES */
 .new-products{
@@ -176,7 +210,7 @@ main{
     flex-direction: column;
     justify-content: space-between;
 }
-/* OFERTA EN CARD */
+/* OFERTA EN LA PRIMERA CARD*/
 #card1{
     position: relative;
 }
@@ -190,6 +224,7 @@ main{
     font: 700 14px 'Lato';
     color: white;
 }
+/* -------------------------------------- */
 .product-img img{
     width: 100%;
 }
@@ -220,6 +255,10 @@ main{
     border-radius: 5px;
     color: white;
     font: 700 14px 'Lato';
+}
+.product-button button:hover{
+    cursor: pointer;
+    background-color: #d27c42;
 }
 .price{
     width: 80%;
@@ -276,4 +315,58 @@ footer{
 .footer-copyright{
     padding: .5rem 0;
     text-align: center;
+}
+/* MEDIAQUERIES MOBILE */
+@media(max-width:480px){
+    /* HEADER */
+    .free-shiping-container{
+        padding: .3rem;
+    }
+    .free-shiping-text h2{
+        font-size: 9px;
+    }
+    .header-content{
+        flex-direction: column;
+    }
+    .logo{
+        padding-bottom: 1rem;
+    }
+    .input {
+        width: 95%;
+        padding: 0 0 1rem 0;
+    }
+    .input::after{display: none;}
+    .input input{width: 100%;}
+    .header-icons{
+        display: flex;
+        justify-content: space-evenly;
+        width: 50%;
+        margin: 0 auto;
+    }
+    nav{
+        width: 100%;
+    }
+    nav div a{
+        font: normal 12px 'Lato';
+    }
+    /* QUITO MENÚ DESPLEGABLE EN MOBILE */
+    .menu:hover .submenu{
+        display: none;
+    }
+    /* MAIN */
+    .banner{
+        display: none;
+    }
+    .new-products-grid {
+        margin-top: 4rem;
+        display: flex;
+        flex-direction: column;
+    }
+    /* FOOTER */
+    .footer-flex{
+        flex-direction: column;
+    }
+    .footer-category{
+        width: 100%;
+    }
 }
