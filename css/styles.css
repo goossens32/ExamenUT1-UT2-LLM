@@ -35,31 +35,45 @@
 /* ----------------------------------- */
 .header-content{
     display: flex;
-    justify-content: space-between;
+    /* Ajusto los margenes con flex-basis y text-align */
+    justify-content: flex-start;
+    /* ---------------------------- */
     align-items: center;
+    border-top: 2px solid rgba(128, 128, 128, 0.135);
+    border-bottom: 2px solid rgba(128, 128, 128, 0.135);
+    padding: 1rem 0;
 }
-/* SUBMENU STYLES */
-.menu{
+.logo{
+    flex-basis: 20%;
+}
+.logo img{
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+.input{
+    flex-basis: 60%;
+    padding:0 2rem;
     position: relative;
 }
-.menu:hover .submenu{
-    display: block;
+.input input{
+    width: 100%;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    border: 2px solid #f1caaf;
 }
-.submenu{
-    display: none;
-    position: absolute;
-    top: 3rem;
-    z-index: 5;
-    background-color: white;
-    padding: 1rem;
-    border-radius: 10px;
+.input::after{
+    /* https://stackoverflow.com/questions/19285640/font-awesome-icon-inside-text-input-element */
+    /* Dentro de input en position relative agrego font awesome */
+    font-family: 'FontAwesome';
+    color: grey;
+        content: '\f002';
+        position: absolute;
+        top: .5rem;
+        right: 3rem;
 }
-.submenu-flex{
-    display: flex;
-}
-.submenu-img img{
-    border-radius: 10px;
-    width: 30%;
+.language{
+    flex-basis: 20%;
 }
 /* NAV STYLES */
 nav{
@@ -68,6 +82,45 @@ nav{
     align-items: center;
     width: 50%;
     margin: 0 auto;
+    padding: 1.5rem 0;
+}
+nav div a{
+    text-decoration: none;
+    font: 700 16px 'Lato';
+    color: #000;
+}
+/* SUBMENU STYLES */
+.menu{
+    position: relative;
+    width: auto;
+}
+.submenu{
+    display: none;
+    position: absolute;
+    z-index: 5;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+}
+.menu:hover .submenu{
+    display: block;
+}
+.submenu-flex{
+    width: 50%;
+    display: flex;
+}
+.submenu-a{
+    flex-basis: 50%;
+}
+.submenu-a a{
+    padding: .5rem 0;
+}
+.submenu-img{
+    flex-basis: 50%;
+
+}
+.submenu-img img{
+    border-radius: 10px;
 }
 /* MAIN STYLES */
 main{
@@ -80,7 +133,6 @@ main{
     background-image: url(../img/banners/banner-1.jpg);
     background-size: cover;
     border-radius: 10px;
-    margin: 2rem 0;
 }
 .banner-text{
     padding: 1rem 2rem; 
@@ -107,4 +159,121 @@ main{
     border: none;
     border-radius: 5px;
     margin: 1rem 0;
+}
+/* GRID STYLES */
+.new-products{
+    margin: 2rem 0 1rem 0;
+}
+.new-products-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+    row-gap: 4rem;
+}
+.card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* OFERTA EN CARD */
+#card1{
+    position: relative;
+}
+.offer{
+    position: absolute;
+    top: 10px;
+    padding: .5rem;
+    width: 30%;
+    clip-path: polygon(0% 0%, 70% 0, 100% 50%, 70% 100%, 0% 100%);
+    background-color: #f18491;
+    font: 700 14px 'Lato';
+    color: white;
+}
+.product-img img{
+    width: 100%;
+}
+.product-info h4{
+    color: #f18491;
+    font: 700 14px 'Lato';
+}
+.product-name{
+    color: grey;
+    padding: .5rem 0;
+}
+.product-stars{
+    padding: .5rem 0;
+}
+.product-price-button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.product-button{
+    width: 20%;
+}
+.product-button button{
+    width: 100%;
+    padding: .2rem .4rem;
+    border: none;
+    background-color: #fb944f;
+    border-radius: 5px;
+    color: white;
+    font: 700 14px 'Lato';
+}
+.price{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.price div{
+    padding-right: .5rem;
+    font-weight: 700;
+}
+.price div:last-child{
+    text-decoration: line-through;
+    font-weight: normal;
+}
+/* FOOTER STYLES */
+footer{
+    margin-top: 4rem;
+    background-color: black;
+    color: white;
+}
+.footer-flex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid grey;
+}
+.footer-category{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+.footer-title{
+    font: 700 16px 'Lato';
+    padding-bottom: .4rem;
+    border-bottom: 2px solid #f1caaf;
+}
+.footer-category a{
+    text-decoration: none;
+    color: rgb(163, 163, 163);
+    padding: .5rem 0;
+}
+.payment-container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+.payment-container img{
+    display: block;
+    margin: 0 auto;
+}
+.footer-copyright{
+    padding: .5rem 0;
+    text-align: center;
 }
